@@ -1,0 +1,14 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Ansible
+*.pem
+
+# Kubernetes / binaries
+kubectl.exe
+
+# OS files
+.DS_Store
+Thumbs.db
