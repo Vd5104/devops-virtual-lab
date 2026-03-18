@@ -32,7 +32,8 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            docker pull vd5104/devops-lab-app:latest
-            docker stop devops-container || true
-            docker rm devops-container || true
-            docker run -d -p 80:80 --name devops-container vd5104/devops-lab-app:latest
+            cd devops-virtual-lab
+            git pull
+            kubectl apply -f k8s/deployment.yml
+            kubectl apply -f k8s/service.yml
+            kubectl rollout restart deployment devops-app
