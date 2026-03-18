@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: devops-container
-        image: devops-lab-app
-        imagePullPolicy: Never
+        image: vd5104/devops-lab-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
